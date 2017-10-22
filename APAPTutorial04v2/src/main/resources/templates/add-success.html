@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">	
+	<head>
+		<title>Add</title>
+	</head>
+	<body>
+			<div th:replace="fragments/fragment :: header"></div>
+
+		<h2>Sukses!</h2>
+		<h4 th:text="${entitas} + ' dengan ' + ${judul} + ' ' + ${nik} + ' berhasil ditambahkan'">Penduduk dengan NIK berhasil ditambahkan</h4>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"></link>
+
+<title>Add Keluarga</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+		<div th:replace="fragments/fragment :: header"></div>
+
+	<h1 class="page-header">Tambah Keluarga</h1>
+
+	<form action="/keluarga/tambah" method="post">
+		<br/><label for="alamat">Alamat</label> <input type="text" name="alamat"/>
+		<br/><label for="rt">RT</label> <input type="text" name="rt" />
+		<br/><label for="rw'">RW</label> <input type="text" name="rw" />
+		
+		<br/><label for="id_kelurahan">ID Kelurahan</label> <input type="text" name="id_kelurahan" />
+		<input type="hidden" name="flag" value="yes"/>
+		<button type="submit" name="action" value="save">Simpan</button>
+	</form>
+
+
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"></link>
+
+        <title>View Penduduk by NPM</title>
+    </head>
+    <body>
+			<div th:replace="fragments/fragment :: header"></div>
+
+    	<table> 
+    		<tr><td>NIK : </td><td th:text="${penduduk.nik}">Penduduk NIK</td></tr>
+    		<tr><td>Nama : </td><td th:text="${penduduk.nama}">Penduduk NIK</td></tr>
+    		<tr><td>Tempat/Tanggal Lahir : </td><td th:text="${penduduk.tempat_lahir} + ', ' + ${penduduk.tanggalLahir()}">Penduduk NIK</td></tr>
+    		<tr><td>Alamat : </td><td th:text="${penduduk.keluarga.alamat}">Penduduk NIK</td></tr>
+    		<tr><td>RT/RW : </td><td th:text="${penduduk.keluarga.rt} + '/' + ${penduduk.keluarga.rw}">Penduduk NIK</td></tr>
+			<tr><td>Kelurahan/Desa : </td><td th:text="${penduduk.keluarga.kelurahan.nama_kelurahan}">Penduduk NIK</td></tr>
+    		<tr><td>Kecamatan : </td><td th:text="${penduduk.keluarga.kelurahan.kecamatan.nama_kecamatan}">Penduduk NIK</td></tr>
+    		<tr><td>Kota : </td><td th:text="${penduduk.keluarga.kelurahan.kecamatan.kota.nama_kota}">Penduduk NIK</td></tr>
+    		<tr><td>Golongan Darah : </td><td th:text="${penduduk.golongan_darah}">Penduduk NIK</td></tr>
+    		<tr><td>Agama : </td><td th:text="${penduduk.agama}">Penduduk NIK</td></tr>
+    		<tr><td>Status Perkawinan : </td><td th:text="${penduduk.status_perkawinan}">Penduduk NIK</td></tr>
+    		<tr><td>Pekerjaan : </td><td th:text="${penduduk.pekerjaan}">Penduduk NIK</td></tr>
+    		<tr><td>Kewarganegaraan : </td><td th:text="${penduduk.kewarganegaraan()}">Penduduk NIK</td></tr>
+    		<tr><td>Status Kematian : </td><td th:text="${penduduk.statusKematian()}">Penduduk NIK</td></tr>
+			
+			<form method="post" action="/penduduk/mati">
+				<input type="hidden" name="nik" th:value="${penduduk.nik}"/>
+				<button th:type="${penduduk.is_wafat == 0} ? 'submit' : 'hidden'" name="action" value="save">Non-aktifkan</button>
+			</form>
+    		
+    	</table>
+		
+    </body>
+</html>
+

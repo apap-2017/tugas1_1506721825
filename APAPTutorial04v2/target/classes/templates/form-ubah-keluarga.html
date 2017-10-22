@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"></link>
+
+<title>Update Keluarga</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+		<div th:replace="fragments/fragment :: header"></div>
+
+	<h1 class="page-header">Ubah Keluarga</h1>
+
+	<form th:action="'/keluarga/ubah/' + ${nkk}" method="post" th:object="${keluarga}">
+		<br/><label for="alamat">Alamat</label> <input th:field="*{alamat}" th:value="${keluarga.alamat}" type="text" name="alamat" />
+		<br/><label for="rt">RT</label> <input type="text"  th:field="*{rt}" th:value="${keluarga.rt}"  name="rt" />
+		<br/><label for="rw'">RW</label> <input type="text"  th:field="*{rw}" th:value="${keluarga.rw}"  name="rw" />
+		
+		<br/><label for="id_kelurahan">ID Kelurahan</label> <input type="text"  th:field="*{id_kelurahan}" th:value="${keluarga.id_kelurahan}" name="id_kelurahan" />
+		<input type="hidden" name="flag" value="yes"/>
+		<button type="submit" name="action" value="save">Simpan</button>
+	</form>
+
+
+</body>
+</html>
+

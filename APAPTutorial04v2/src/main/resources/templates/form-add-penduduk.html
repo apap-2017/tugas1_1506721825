@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"></link>
+
+<title>Add Penduduk</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+		<div th:replace="fragments/fragment :: header"></div>
+
+	<h1 class="page-header">Tambah Penduduk</h1>
+
+	<form action="/penduduk/tambah" method="post">
+		<br/><label for="nama">Nama</label> <input type="text" name="nama"/>
+		<br/><label for="tempat_lahir">Tempat Lahir</label> <input type="text" name="tempat_lahir" />
+		<br/><label for="tanggal_lahir'">Tanggal Lahir</label> <input type="date" name="tanggal_lahir" />
+		<br/><label for="golongan_darah">Golongan Darah</label>
+			<select name="golongan_darah">
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="AB">AB</option>
+				<option value="O">O</option>
+			</select>
+		<br/><label for="agama">Agama</label> <input type="text" name="agama" />
+		<br/><label for="status_perkawinan">Status Perkawinan</label>
+			<select name="status_perkawinan">
+				<option value="Kawin">Kawin</option>
+				<option value="Belum Kawin">Belum Kawin</option>
+				<option value="Cerai Mati">Cerai Mati</option>
+				<option value="Cerai Hidup">Cerai Hidup</option>
+			</select>
+		<br/><label for="pekerjaan">Pekerjaan</label> <input type="text" name="pekerjaan"/>
+		<br/><label for="kewarganegaraan">Kewarganegaraan</label> 	
+			<select name="kewarganegaraan">
+				<option value="0">Asing</option>
+				<option value="1">Indonesia</option>
+			</select>
+		<br/><label for="jenis_kelamin">Jenis Kelamin</label> 	
+			<select name="jenis_kelamin">
+				<option value="0">Pria</option>
+				<option value="1">Wanita</option>
+			</select>
+		<br/><label for="status_kematian">Status Kematian</label> 	
+			<select name="status_kematian">
+				<option value="1">Wafat</option>
+				<option value="0">Hidup</option>
+			</select>
+		
+		<br/><label for="id_keluarga">ID Keluarga</label> <input type="text" name="id_keluarga" />
+		<br/><label for="status_dalam_keluarga">Status Dalam Keluarga</label> <input type="text" name="status_dalam_keluarga" />
+		<input type="hidden" name="flag" value="yes"/>
+		<button type="submit" name="action" value="save">Simpan</button>
+	</form>
+
+
+</body>
+</html>
+
